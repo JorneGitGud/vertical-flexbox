@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "vertical-flexbox",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

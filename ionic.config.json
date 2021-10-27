@@ -1,0 +1,7 @@
+{
+  "name": "vertical-flexbox",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

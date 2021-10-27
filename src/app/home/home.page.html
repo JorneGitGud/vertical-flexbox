@@ -7,14 +7,94 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<div class="container">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="yellow" *ngIf="list.yellow!='none'">
+    <div class="header">
+      <ion-button (click)="onToggleMin('yellow')">
+        <ion-icon *ngIf="list.yellow!='min'" name="remove"></ion-icon>
+        <ion-icon *ngIf="list.yellow=='min'" name="add"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="onToggleMax('yellow')">
+        <ion-icon *ngIf="list.yellow!='max'" name="square-outline"></ion-icon>
+        <ion-icon *ngIf="list.yellow=='max'" name="square"></ion-icon>
+      </ion-button>
+      <ion-label>
+        {{list.yellow}}
+      </ion-label>
+    </div>
+    <div class="content"  *ngIf="list.yellow!='min'" ngClass="{{list.yellow}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
   </div>
+
+  <div class="blue" *ngIf="list.blue!='none'">
+    <div class="header">
+
+      <ion-button (click)="onToggleMin('blue')">
+        <ion-icon *ngIf="list.blue!='min'" name="remove"></ion-icon>
+        <ion-icon *ngIf="list.blue=='min'" name="add"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="onToggleMax('blue')">
+        <ion-icon *ngIf="list.blue!='max'" name="square-outline"></ion-icon>
+        <ion-icon *ngIf="list.blue=='max'" name="square"></ion-icon>
+      </ion-button>
+      <ion-label>
+        {{list.blue}}
+      </ion-label>
+    </div>
+
+    <div class="content" *ngIf="list.blue!='min'"ngClass="{{list.blue}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+  </div>
+
+  <div class="green" *ngIf="list.green!='none'">
+    <div class="header">
+      <ion-button (click)="onToggleMin('green')">
+        <ion-icon *ngIf="list.green!='min'" name="remove"></ion-icon>
+        <ion-icon *ngIf="list.green=='min'" name="add"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="onToggleMax('green')">
+        <ion-icon *ngIf="list.green!='max'" name="square-outline"></ion-icon>
+        <ion-icon *ngIf="list.green=='max'" name="square"></ion-icon>
+      </ion-button>
+      <ion-label>
+        {{list.green}}
+      </ion-label>
+    </div>
+    <div class="content"  *ngIf="list.green!='min'" ngClass="{{list.green}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+  </div>
+
+  <div class="red" *ngIf="list.red!='none'">
+    <div class="header">
+  <ion-button (click)="onToggleMin('red')">
+        <ion-icon *ngIf="list.red!='min'" name="remove"></ion-icon>
+        <ion-icon *ngIf="list.red=='min'" name="add"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="onToggleMax('red')">
+        <ion-icon *ngIf="list.red!='max'" name="square-outline"></ion-icon>
+        <ion-icon *ngIf="list.red=='max'" name="square"></ion-icon>
+      </ion-button>
+      <ion-label>
+        {{list.red}}
+      </ion-label>
+    </div>
+    <div class="content"  *ngIf="list.red!='min'" ngClass="{{list.red}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+  </div>
+</div>
+
 </ion-content>

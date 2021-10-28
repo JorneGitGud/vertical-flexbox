@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="panes-list-container">
+
+    <!-- yellow pane -->
+    <div class="pane-container">
+      <!-- header -->
+      <div class="header yellow">
+        <ion-label>
+          {{list.yellow}}
+        </ion-label>
+        <div class="header-icons">
+          <div (click)="onToggleSize('yellow', 'min')">
+            <ion-icon *ngIf="list.yellow!='min'" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.yellow=='min'" name="add"></ion-icon>
+          </div>
+          <div (click)="onToggleSize('yellow', 'full')">
+            <ion-icon *ngIf="list.yellow=='full'" name="contract"></ion-icon>
+            <ion-icon *ngIf="list.yellow!='full'" name="resize"></ion-icon>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content" *ngIf="list.yellow!='min'" ngClass="{{list.yellow}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+
+    <!-- blue pane -->
+    <div class="pane-container">
+      <!-- header -->
+      <div class="header blue">
+        <ion-label>
+          {{list.blue}}
+        </ion-label>
+        <div class="header-icons">
+          <div (click)="onToggleSize('blue', 'min')">
+            <ion-icon *ngIf="list.blue!='min'" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.blue=='min'" name="add"></ion-icon>
+          </div>
+          <div (click)="onToggleSize('blue', 'full')">
+            <ion-icon *ngIf="list.blue=='full'" name="contract"></ion-icon>
+            <ion-icon *ngIf="list.blue!='full'" name="resize"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content" *ngIf="list.blue!='min'" ngClass="{{list.blue}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+
+    <!-- red pane -->
+    <div class="pane-container">
+      <!-- header -->
+      <div class="header red">
+        <ion-label>
+          {{list.red}}
+        </ion-label>
+        <div class="header-icons">
+          <div (click)="onToggleSize('red', 'min')">
+            <ion-icon *ngIf="list.red!='min'" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.red=='min'" name="add"></ion-icon>
+          </div>
+          <div (click)="onToggleSize('red', 'full')">
+            <ion-icon *ngIf="list.red=='full'" name="contract"></ion-icon>
+            <ion-icon *ngIf="list.red!='full'" name="resize"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content" *ngIf="list.red!='min'" ngClass="{{list.red}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+
+
+    <!-- yellow pane -->
+    <div class="pane-container">
+      <!-- header -->
+      <div class="header green">
+        <ion-label>
+          {{list.green}}
+        </ion-label>
+        <div class="header-icons">
+          <div (click)="onToggleSize('green', 'min')">
+            <ion-icon *ngIf="list.green!='min'" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.green=='min'" name="add"></ion-icon>
+          </div>
+          <div (click)="onToggleSize('green', 'full')">
+            <ion-icon *ngIf="list.green=='full'" name="contract"></ion-icon>
+            <ion-icon *ngIf="list.green!='full'" name="resize"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content" *ngIf="list.green!='min'" ngClass="{{list.green}}">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+    </div>
+
+
+  </div>
+
+
+
+</ion-content>

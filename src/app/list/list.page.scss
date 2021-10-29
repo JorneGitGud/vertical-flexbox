@@ -9,15 +9,12 @@
 
 .small{
   height: 1;
-  // min-height: 15vh;
   max-height: 15vh;
   overflow-y: auto;
 }
 
 .max{
   height:1;
-  // min-height: 450px;
-  // min-height: var(--max);
   max-height: var(--max);
   overflow-y: scroll;
 }
@@ -29,7 +26,8 @@
 .panes-list-container{
   background-color: rgb(66, 64, 64);
   max-width: 30%;
-  min-height: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -49,14 +47,12 @@
 
 .header-icons{
   margin-left: auto;
+  margin-right: 10px;
   display:flex;
 }
 
 .header ion-icon:hover{
   cursor: pointer;
-}
-.header ion-label{
-
 }
 
 .content{

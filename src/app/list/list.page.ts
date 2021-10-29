@@ -1,4 +1,5 @@
-import { AfterContentInit, AfterViewChecked, Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { WindowSizeService } from './../services/windowSizeService';
+import { AfterContentInit, AfterViewChecked, Component, ElementRef, ViewChild, AfterViewInit, Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -18,12 +19,13 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
     greenMin: false
   }
 
-  containerHeight :number =0;
-  usedHeight: number=0;
+  // windowsSizeService : WindowSizeService;
+
+  containerHeight :number;
+  usedHeight: number;
   maxHeight: number = 350;
   redPaneContentHeight;
 
-  checkedHeights: boolean = false;
 
   @ViewChild('paneslist') panesList: ElementRef;
   @ViewChild('yellowpane') yellowPane: ElementRef;
@@ -32,37 +34,49 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
   @ViewChild('greenpane') greenPane: ElementRef;
   root = document.documentElement;
 
-  constructor() {
+  //windowSizeService:WindowSizeService
+  constructor( ) {
     this.root.style.setProperty('--max', this.maxHeight+"px")
+  //  this.windowsSizeService = windowSizeService;
+  //  this.windowsSizeService.onResize.subscribe($event => this.onResize());
   }
 
+  // onResize(){
+  //   this.setHeights();
+  // }
+
   ngAfterViewChecked(): void {
-   this.getHeights();
+   this.setHeights();
   }
+  //offset height in variable
+  //offset height reflow
+
   ngAfterViewInit(): void {
-    this.getHeights();
+    // this.setHeights();
   }
 
   test(){
     console.log(this.maxHeight);
   }
 
-  getHeights(){
-    console.log('get heights')
-    this.containerHeight  =  this.panesList.nativeElement.offsetHeight;
-    this.usedHeight       =  this.yellowPane.nativeElement.offsetHeight
-                          + this.bluePane.nativeElement.offsetHeight
-                          + (this.greenPane.nativeElement.offsetHeight/1.5);
+  setHeights(){
 
-    this.calculatedMaxHeight(this.containerHeight, this.usedHeight);
+    if(this.panesList.nativeElement.offsetHeight && this.panesList && (this.containerHeight != this.panesList.nativeElement.offsetHeight) ){
+      console.log('method execution')
+      this.containerHeight  =  this.panesList.nativeElement.offsetHeight;
+      this.usedHeight       =  this.yellowPane.nativeElement.offsetHeight
+      + this.bluePane.nativeElement.offsetHeight
+      + this.greenPane.nativeElement.offsetHeight;
+
+      this.calculateMaxHeight(this.containerHeight, this.usedHeight);
+    }else{
+      console.log('method call')
+    }
   }
 
-  calculatedMaxHeight(containerHeight, usedHeight){
+  calculateMaxHeight(containerHeight, usedHeight){
     this.maxHeight = (containerHeight - usedHeight);
     this.root.style.setProperty('--max', this.maxHeight+'px')
-
-    this.checkedHeights=true;
-
   }
 
   onCollapse(name:string){
@@ -71,12 +85,8 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
 
   onSetSize(name:string, size:string){
 
-    console.log(name + " : " + size)
-
     this.list[name+'Min'] = false;
 
     this.list[name]=size;
-
-
   }
 }

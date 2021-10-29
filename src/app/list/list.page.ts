@@ -1,3 +1,5 @@
+//https://toruskit.com/blog/how-to-get-element-bounds-without-reflow/
+
 import { WindowSizeService } from './../services/windowSizeService';
 import { AfterContentInit, AfterViewChecked, Component, ElementRef, ViewChild, AfterViewInit, Injectable } from '@angular/core';
 

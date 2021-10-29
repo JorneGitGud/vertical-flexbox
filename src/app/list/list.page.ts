@@ -9,9 +9,13 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
 
   list={
     yellow:'full',
-    blue:'min',
+    yellowMin: false,
+    blue:'small',
+    blueMin:true,
     red:'max',
-    green:'small'
+    redMin:false,
+    green:'small',
+    greenMin: false
   }
 
   containerHeight :number =0;
@@ -61,28 +65,18 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
 
   }
 
-  onToggleSize(name:string, size: string){
-    if(!(this.list[name]==size)){
-      this.list[name]=size;
-    }
-    else{
-      switch (this.list[name]) {
-        case 'min':
-          this.list[name]='small'
-          break;
-        case 'small':
-          this.list[name]='min'
-          break;
-        case 'max':
-          this.list[name]='full'
-          break;
-        case 'full':
-          this.list[name]='small'
-          break;
+  onCollapse(name:string){
+    this.list[name]=!this.list[name];
+  }
 
-        default:
-          break;
-      }
-    }
+  onSetSize(name:string, size:string){
+
+    console.log(name + " : " + size)
+
+    this.list[name+'Min'] = false;
+
+    this.list[name]=size;
+
+
   }
 }

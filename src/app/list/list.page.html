@@ -16,19 +16,19 @@
           {{list.yellow}}
         </ion-label>
         <div class="header-icons" >
-          <div (click)="onToggleSize('yellow', 'min')">
-            <ion-icon *ngIf="list.yellow!='min'" name="remove"></ion-icon>
-            <ion-icon *ngIf="list.yellow=='min'" name="add"></ion-icon>
+          <div (click)="onCollapse('yellowMin')">
+            <ion-icon *ngIf="!list.yellowMin" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.yellowMin" name="add"></ion-icon>
           </div>
-          <div (click)="onToggleSize('yellow', 'full')">
-            <ion-icon *ngIf="list.yellow=='full'" name="contract"></ion-icon>
-            <ion-icon *ngIf="list.yellow!='full'" name="resize"></ion-icon>
+          <div>
+            <ion-icon (click)="onSetSize('yellow', 'small')" *ngIf="list.yellow=='full'" name="square"></ion-icon>
+            <ion-icon (click)="onSetSize('yellow', 'full')" *ngIf="list.yellow!='full'" name="square-outline"></ion-icon>
           </div>
         </div>
 
       </div>
       <!-- content -->
-      <div class="content" *ngIf="list.yellow!='min'" ngClass="{{list.yellow}}">
+      <div class="content" *ngIf="list.yellowMin==false" ngClass="{{list.yellow}}">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
       </div>
     </div>
@@ -41,18 +41,18 @@
           {{list.blue}}
         </ion-label>
         <div class="header-icons">
-          <div (click)="onToggleSize('blue', 'min')">
-            <ion-icon *ngIf="list.blue!='min'" name="remove"></ion-icon>
-            <ion-icon *ngIf="list.blue=='min'" name="add"></ion-icon>
+          <div (click)="onCollapse('blueMin')">
+            <ion-icon *ngIf="!list.blueMin" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.blueMin" name="add"></ion-icon>
           </div>
-          <div (click)="onToggleSize('blue', 'full')">
-            <ion-icon *ngIf="list.blue=='full'" name="contract"></ion-icon>
-            <ion-icon *ngIf="list.blue!='full'" name="resize"></ion-icon>
+          <div>
+            <ion-icon (click)="onSetSize('blue', 'small')" *ngIf="list.blue=='full'" name="square"></ion-icon>
+            <ion-icon (click)="onSetSize('blue', 'full')" *ngIf="list.blue!='full'" name="square-outline"></ion-icon>
           </div>
         </div>
       </div>
       <!-- content -->
-      <div class="content" *ngIf="list.blue!='min'" ngClass="{{list.blue}}">
+      <div class="content" *ngIf="!list.blueMin" ngClass="{{list.blue}}">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
       </div>
@@ -66,18 +66,18 @@
           {{list.red}}
         </ion-label>
         <div class="header-icons">
-          <div (click)="onToggleSize('red', 'min')">
-            <ion-icon *ngIf="list.red!='min'" name="remove"></ion-icon>
-            <ion-icon *ngIf="list.red=='min'" name="add"></ion-icon>
+          <div (click)="onCollapse('redMin')">
+            <ion-icon *ngIf="!list.redMin" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.redMin" name="add"></ion-icon>
           </div>
-          <div (click)="onToggleSize('red', 'full')">
-            <ion-icon *ngIf="list.red=='full'" name="contract"></ion-icon>
-            <ion-icon *ngIf="list.red!='full'" name="resize"></ion-icon>
+          <div>
+            <ion-icon (click)="onSetSize('red', 'small')" *ngIf="list.red=='full'" name="square"></ion-icon>
+            <ion-icon (click)="onSetSize('red', 'full')" *ngIf="list.red!='full'" name="square-outline"></ion-icon>
           </div>
         </div>
       </div>
       <!-- content -->
-      <div class="content" *ngIf="list.red!='min'" ngClass="{{list.red}}">
+      <div class="content" *ngIf="!list.redMin" ngClass="{{list.red}}">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
@@ -95,18 +95,18 @@
           {{list.green}}
         </ion-label>
         <div class="header-icons">
-          <div (click)="onToggleSize('green', 'min')">
-            <ion-icon *ngIf="list.green!='min'" name="remove"></ion-icon>
-            <ion-icon *ngIf="list.green=='min'" name="add"></ion-icon>
+          <div (click)="onCollapse('greenMin')">
+            <ion-icon *ngIf="!list.greenMin" name="remove"></ion-icon>
+            <ion-icon *ngIf="list.greenMin" name="add"></ion-icon>
           </div>
-          <div (click)="onToggleSize('green', 'full')">
-            <ion-icon *ngIf="list.green=='full'" name="contract"></ion-icon>
-            <ion-icon *ngIf="list.green!='full'" name="resize"></ion-icon>
+          <div>
+            <ion-icon (click)="onSetSize('green', 'small')" *ngIf="list.green=='full'" name="square"></ion-icon>
+            <ion-icon (click)="onSetSize('green', 'full')" *ngIf="list.green!='full'" name="square-outline"></ion-icon>
           </div>
         </div>
       </div>
       <!-- content -->
-      <div class="content" *ngIf="list.green!='min'" ngClass="{{list.green}}">
+      <div class="content" *ngIf="!list.greenMin" ngClass="{{list.green}}">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.

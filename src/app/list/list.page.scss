@@ -1,5 +1,5 @@
 :root{
-  --max : 450px;
+  --max : 250px;
 }
 
 .min{
@@ -9,16 +9,16 @@
 
 .small{
   height: 1;
-  min-height: 75px;
-  max-height: 75px;
+  min-height: 15vh;
+  max-height: 15vh;
   overflow-y: scroll;
 }
 
 .max{
   height:1;
-  min-height: 450px;
+  // min-height: 450px;
   // min-height: var(--max);
-  // max-height: var(--max);
+  max-height: var(--max);
   overflow-y: scroll;
 }
 
@@ -29,7 +29,7 @@
 .panes-list-container{
   background-color: rgb(66, 64, 64);
   max-width: 30%;
-  max-height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

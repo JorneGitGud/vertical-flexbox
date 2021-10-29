@@ -6,16 +6,16 @@
 
 <ion-content>
 
-  <div class="panes-list-container">
+  <div class="panes-list-container" #paneslist>
 
     <!-- yellow pane -->
-    <div class="pane-container">
+    <div class="pane-container" #yellowpane>
       <!-- header -->
       <div class="header yellow">
         <ion-label>
           {{list.yellow}}
         </ion-label>
-        <div class="header-icons">
+        <div class="header-icons" >
           <div (click)="onToggleSize('yellow', 'min')">
             <ion-icon *ngIf="list.yellow!='min'" name="remove"></ion-icon>
             <ion-icon *ngIf="list.yellow=='min'" name="add"></ion-icon>
@@ -26,16 +26,15 @@
           </div>
         </div>
 
-
       </div>
-    </div>
-    <!-- content -->
-    <div class="content" *ngIf="list.yellow!='min'" ngClass="{{list.yellow}}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      <!-- content -->
+      <div class="content" *ngIf="list.yellow!='min'" ngClass="{{list.yellow}}">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      </div>
     </div>
 
     <!-- blue pane -->
-    <div class="pane-container">
+    <div class="pane-container" #bluepane>
       <!-- header -->
       <div class="header blue">
         <ion-label>
@@ -52,15 +51,15 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- content -->
-    <div class="content" *ngIf="list.blue!='min'" ngClass="{{list.blue}}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      <!-- content -->
+      <div class="content" *ngIf="list.blue!='min'" ngClass="{{list.blue}}">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      </div>
     </div>
 
     <!-- red pane -->
-    <div class="pane-container">
+    <div class="pane-container" #redpane>
       <!-- header -->
       <div class="header red">
         <ion-label>
@@ -77,19 +76,19 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- content -->
-    <div class="content" *ngIf="list.red!='min'" ngClass="{{list.red}}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      <!-- content -->
+      <div class="content" *ngIf="list.red!='min'" ngClass="{{list.red}}">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      </div>
     </div>
 
 
-    <!-- yellow pane -->
-    <div class="pane-container">
+    <!-- green pane -->
+    <div class="pane-container" #greenpane>
       <!-- header -->
       <div class="header green">
         <ion-label>
@@ -106,10 +105,14 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- content -->
-    <div class="content" *ngIf="list.green!='min'" ngClass="{{list.green}}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      <!-- content -->
+      <div class="content" *ngIf="list.green!='min'" ngClass="{{list.green}}">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates possimus fuga placeat inventore fugiat obcaecati ipsum, voluptatibus laboriosam vel amet repudiandae quae quo consequatur maxime voluptatum molestias atque? Odio.
+      </div>
     </div>
 
 

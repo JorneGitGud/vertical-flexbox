@@ -40,7 +40,7 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
    this.getHeights();
   }
   ngAfterViewInit(): void {
-  //  this.getHeights();
+    this.getHeights();
   }
 
   test(){

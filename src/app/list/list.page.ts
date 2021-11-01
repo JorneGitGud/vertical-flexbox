@@ -36,25 +36,16 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
   @ViewChild('greenpane') greenPane: ElementRef;
   root = document.documentElement;
 
-  //windowSizeService:WindowSizeService
   constructor( ) {
     this.root.style.setProperty('--max', this.maxHeight+"px")
-  //  this.windowsSizeService = windowSizeService;
-  //  this.windowsSizeService.onResize.subscribe($event => this.onResize());
   }
 
-  // onResize(){
-  //   this.setHeights();
-  // }
 
   ngAfterViewChecked(): void {
    this.setHeights();
   }
-  //offset height in variable
-  //offset height reflow
 
   ngAfterViewInit(): void {
-    // this.setHeights();
   }
 
   test(){
@@ -63,7 +54,7 @@ export class ListPage implements AfterViewChecked, AfterViewInit {
 
   setHeights(){
 
-    if(this.panesList.nativeElement.offsetHeight && this.panesList && (this.containerHeight != this.panesList.nativeElement.offsetHeight) ){
+    if(this.panesList.nativeElement.offsetHeight && this.panesList && (this.containerHeight != this.panesList.nativeElement.offsetHeight) &&(this.list.red=='max') ){
       console.log('method execution')
       this.containerHeight  =  this.panesList.nativeElement.offsetHeight;
       this.usedHeight       =  this.yellowPane.nativeElement.offsetHeight
